@@ -159,9 +159,9 @@ nnoremap <silent> <leader>to : TlistOpen<CR>
 nnoremap <silent> <leader>tc :TlistClose<CR>
 
 " ====================   Leaderf  ================
-"let g:Lf_WindowPosition = 'popup'
-let g:Lf_WindowPosition = 'left'
-let g:Lf_PreviewWidth = 100
+let g:Lf_WindowPosition = 'popup'
+"let g:Lf_WindowPosition = 'left'
+"let g:Lf_PreviewWidth = 100
 let g:Lf_WorkingDirectoryMode='AF'
 let g:Lf_RootMarkers = ['.git', '.svn', '.hg', '.project', '.root']
 " 搜索时候排除如下
@@ -183,7 +183,7 @@ let g:Lf_ShortcutF = '<c-p>' " 打开文件
 "let g:Lf_ShortcutB = '<c-l>' "无效: 快速打开缓冲区列表
 nnoremap <silent> <leader>lt :Leaderf bufTag<CR>
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf! buffer %s", "")<CR><CR>   " 打开缓冲区列表搜索
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf! mru %s", "")<CR><CR>      " 打开最近编辑文件列表: Most recent list
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf! mru %s", "")<CR><CR>      " 打开最近编辑文件列表
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf! bufTag %s", "")<CR><CR>   " 在当前缓存区搜索标签(函数、类、变量等)，需ctags支持
 "noremap <leader>fl :<C-U><C-R>=printf("Leaderf! line %s", "")<CR><CR>     " 当前文件line搜索, 类似当前文件的grep ATTENTION: 不太生效
 noremap <leader>ff :<C-U><C-R>=printf("Leaderf! function %s", "")<CR><CR> " 当前文件的函数列表
@@ -439,10 +439,10 @@ autocmd FileType qf nnoremap <buffer> <leader>s <C-w><C-s><CR>  " 水平分割 -
 |leaderF | :Leaderf! rg -e "function" --type=python | 搜索特定文件类型 |
 |leaderF | :Leaderf! rg -e "api" --exclude=node_modules --exclude=*.min.js |排除目录 |
 |leaderF | :Leaderf! rg -e "User" --case-sensitive | 大小写敏感搜索 | -s 也可以，默认行为：被搜索的单词是小写则忽略，大写敏感|
-|jedi| **<leader>d** | 跳转到定义 |
-|jedi| **<leader>g** | 在新窗口打开 |
-|jedi| **<leader>n** | 当前符号的所有引用 |
-|jedi| **<leader>r** | 重命名当前符号 | 整个项目重命名 |
+|jedi| **\<leader>d** | 跳转到定义 |
+|jedi| **\<leader>g** | 在新窗口打开 |
+|jedi| **\<leader>n** | 当前符号的所有引用 |
+|jedi| **\<leader>r** | 重命名当前符号 | 整个项目重命名 |
 |jedi| **K** | 显示帮助文档 | Norm 模式下 |
 |jedi| <Ctrl + Space> | 手动触发补全提示 |
 |jedi| <Ctrl + s> | 显示函数签名提示 |
