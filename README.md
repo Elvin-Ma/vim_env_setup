@@ -182,12 +182,12 @@ let g:Lf_IgnoreCurrentBufferName = 1  " 搜索结果排除当前缓冲区
 let g:Lf_ShortcutF = '<c-p>' " 打开文件
 "let g:Lf_ShortcutB = '<c-l>' "无效: 快速打开缓冲区列表
 nnoremap <silent> <leader>lt :Leaderf bufTag<CR>
-noremap <leader>fb :<C-U><C-R>=printf("Leaderf! buffer %s", "")<CR><CR>   " 打开缓冲区列表搜索
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf! mru %s", "")<CR><CR>      " 打开最近编辑文件列表
-noremap <leader>ft :<C-U><C-R>=printf("Leaderf! bufTag %s", "")<CR><CR>   " 在当前缓存区搜索标签(函数、类、变量等)，需ctags支持
-"noremap <leader>fl :<C-U><C-R>=printf("Leaderf! line %s", "")<CR><CR>     " 当前文件line搜索, 类似当前文件的grep ATTENTION: 不太生效
-noremap <leader>ff :<C-U><C-R>=printf("Leaderf! function %s", "")<CR><CR> " 当前文件的函数列表
-noremap <leader>fw :<C-U><C-R>=printf("Leaderf! window  %s", "")<CR><CR>  " vim 窗口快速切换
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf! buffer %s", "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf! mru %s", "")<CR><CR>
+noremap <leader>ft :<C-U><C-R>=printf("Leaderf! bufTag %s", "")<CR><CR>
+"noremap <leader>fl :<C-U><C-R>=printf("Leaderf! line %s", "")<CR><CR>
+noremap <leader>ff :<C-U><C-R>=printf("Leaderf! function %s", "")<CR><CR>
+noremap <leader>fw :<C-U><C-R>=printf("Leaderf! window  %s", "")<CR><CR>
 
 " 设置 LeaderF 默认 grep 命令（如果未安装 rg 则用 ag 或 grep）
 if executable('rg')
@@ -425,9 +425,9 @@ autocmd FileType qf nnoremap <buffer> <leader>s <C-w><C-s><CR>  " 水平分割 -
 |ctags | \<leader>go | 返回上次跳转位置 | ctrl + t 被其他快捷键占用了
 |QuickFix | v | 垂直分割窗口 |
 |QuickFix | <待补充> | 水平分割窗口 | 暂时失效 |
-|leaderF | \<leader>fb | 当前缓冲区的文件 |
-|leaderF | \<leader>fm | 项目内最近打开的文件| Most Rencent files |
-|leaderF | \<leader>ft | 在当前缓冲区搜索标签 | 函数、类、变量等 |
+|leaderF | \<leader>fb | 当前缓冲区的文件列表 |
+|leaderF | \<leader>fm | 项目内最近打开的文件列表| Most Rencent files |
+|leaderF | \<leader>ft | 在当前文件搜索标签 | 函数、类、变量等 |
 |leaderF | \<leader>fl | 当前文件line搜索 | 当前有问题，不建议使用 |
 |leaderF | \<leader>ff | 当前文件的所有函数 | 需ctags插件支持 |
 |leaderF | \<leader>fw | 快速切换窗口 | 暂时不用，有更好快捷键 |
