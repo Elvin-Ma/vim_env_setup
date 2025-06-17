@@ -88,6 +88,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'jiangmiao/auto-pairs' "括号自动补全
 Plug 'azabiong/vim-highlighter'
 Plug 'davidhalter/jedi-vim' "python 补全和跳转
+Plug 'https://gitcode.com/gh_mirrors/pyt/python-syntax.git' "python 语法高亮
 Plug 'https://gitcode.com/gh_mirrors/vim/vim-autoformat.git'
 
 Plug 'ludovicchabant/vim-gutentags'
@@ -112,6 +113,8 @@ Plug 'ludovicchabant/vim-gutentags'
 "Plug 'https://gitcode.com/gh_mirrors/vi/vim-devicons.git'
 
 call plug#end()
+
+let g:python_highlight_all = 1
 
 " ================== nerdtree ===========
 set laststatus=2
