@@ -212,13 +212,13 @@ endif
 " 上一次查询结果
 nnoremap <silent> <Leader>wo :<C-U>Leaderf! rg --recall<CR>
 "nnoremap <Leader>s :Leaderf! rg -e <Left>
-nmap <unique> <leader>wg <Plug>LeaderfRgPrompt
+nmap <unique> <leader>ws <Plug>LeaderfRgPrompt
 " 禁用正则+完整匹配+区分大小写
 noremap <leader>ww :<C-U><C-R>=printf("Leaderf! rg -w  -s -e %s ", expand("<cword>"))<CR>
 "查询光标选中的内容
 noremap <leader>wf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", expand("<cword>"))<CR>
 "全局搜索,自动匹配
-noremap <leader>ws :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+noremap <leader>we :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
 "在当前buffer中搜索,expand 自动获取光标单词,用vim自带的就可以？
 noremap <leader>wb :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
 
@@ -432,9 +432,10 @@ autocmd FileType qf nnoremap <buffer> <leader>s <C-w><C-s><CR>  " 水平分割 -
 |leaderF | \<leader>ff | 当前文件的所有函数 | 需ctags插件支持 |
 |leaderF | \<leader>fw | 快速切换窗口 | 暂时不用，有更好快捷键 |
 |leaderF | \<leader>ww | 准确搜索当前单词 | -F 禁用正则表达式， -w 完整单词，-s  忽略大小写
-|leaderF | \<leader>wg | 自己输入单词 |
-|leaderF | \<leader>wo | 上此搜索的结果 |
-|leaderF | \<leader>wf | 搜索光标选中内容 | -F 禁用正则表达式 |
+|leaderF | \<leader>ws | 自己输入单词 |
+|leaderF | \<leader>wo | 上次搜索的结果 |
+|leaderF | \<leader>wf | 搜索**光标选中**内容 | -F 禁用正则表达式 |
+|leaderF | \<leader>we | 模糊搜索当前单词 | 不完整单词，大小不敏感 |
 |leaderF | :Leaderf! rg -e "text" --path=src/components/| 在特定目录下搜索 |
 |leaderF | :Leaderf! rg -e "function" --type=python | 搜索特定文件类型 |
 |leaderF | :Leaderf! rg -e "api" --exclude=node_modules --exclude=*.min.js |排除目录 |
