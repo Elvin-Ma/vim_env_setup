@@ -63,6 +63,7 @@ set list " set nolist to disable
 set listchars=space:· "空格以点来显示
 set splitright
 "nnoremap <silent> <Esc> :nohlsearch<CR>
+set clipboard=unnamedplus
 filetype plugin on
 
 let mapleader=";"
@@ -152,7 +153,7 @@ augroup END
 noremap <Leader>af :Autoformat<CR>
 
 " ==================== git blame ===========
-nnoremap <Leader>gb :<C-u>call gitblame#echo()<CR>
+nnoremap <Leader>bl :<C-u>call gitblame#echo()<CR>
 
 " ==================== tab list ============
 let g:Tlist_Use_Right_Window = 1
