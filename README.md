@@ -81,8 +81,8 @@ autocmd BufNewFile,BufRead *.cu set filetype=cpp "将cuda文件视为cpp文件
 call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/taglist.vim'
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline' "增强 Vim 状态栏的外观和功能
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline' "增强 Vim 状态栏的外观和功能
 Plug 'Yggdroot/LeaderF'
 Plug 'bfrg/vim-cpp-modern' "c++ 函数名等会有颜色
 Plug 'zivyangll/git-blame.vim'
@@ -116,13 +116,21 @@ Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
-let g:python_highlight_all = 1  " python 语法高亮
-nnoremap·<Leader>q·:Bdelete<CR> " 智能关闭窗口
+"================common setting ===============
+" 活动窗口状态栏
+"highlight StatusLine ctermfg=White ctermbg=DarkGray guifg=#FFFFFF guibg=#444444
+highlight StatusLine ctermfg=Black ctermbg=Gray guifg=#FFFFFF guibg=#444444
+" 非活动窗口状态栏
+highlight StatusLineNC ctermfg=Black ctermbg=Gray guifg=#000000 guibg=#888888
+
+set laststatus=2     " 始终显示状态栏
+set statusline=%f\ %m%r%h%w\ [类型:%y]\ [行:%l/%L,\ 列:%c]\ [%p%%]
+command! File execute 'file ' . expand('%:p') | echo
+
+let g:python_highlight_all = 1
+nnoremap <Leader>q :Bdelete<CR>
 
 " ================== nerdtree ===========
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 autocmd VimEnter * NERDTree
 wincmd w
 autocmd VimEnter * wincmd w
@@ -179,10 +187,10 @@ let g:Lf_DefaultSearchDir = system('git rev-parse --show-toplevel 2>/dev/null') 
 let g:Lf_DefaultExternalTool='rg'
 " 启用版本控制集成: 会自动检测当前项目使用的版本控制系统
 let g:Lf_UseVersionControlTool = 1
-" 同时启用以下优化：
-let g:Lf_UseMemoryCache = 1           " 启用缓存加速
-let g:Lf_UseCache = 1                 " 使用缓存
-let g:Lf_FollowLinks = 1              " 跟随符号链接
+" 同时启用以下优化:优化可能会导致问题
+let g:Lf_UseMemoryCache = 0           " 启用缓存加速
+let g:Lf_UseCache = 0                 " 使用缓存
+let g:Lf_FollowLinks = 1              " 跟随符号链接：结果列表中显示链接目标的实际路径，而非链接本身的路径
 let g:Lf_IgnoreCurrentBufferName = 1  " 搜索结果排除当前缓冲区
 
 let g:Lf_ShortcutF = '<c-p>' " 打开文件
