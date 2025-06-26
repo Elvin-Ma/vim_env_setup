@@ -24,7 +24,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 # ctags + taglist + cscope prepare
 # sudo apt-get install -y exuberant-ctags
-# sudo apt install universal-ctags
+apt install universal-ctags
 # sudo apt-get install cscope
 # sudo apt install global # gtags 教程引用数据库
 
