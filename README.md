@@ -104,6 +104,15 @@ command! File execute 'file ' . expand('%:p') | echo " :File 获取完整文件�
 
 autocmd VimEnter * if !argc() | silent! %bdelete | endif
 
+set autoread     " 允许自动读取外部修改
+au FocusGained * checktime  " 当 Vim 获得焦点时检查文件
+au CursorHold * checktime   " 光标停留时检查文件（需配合 updatetime）
+set updatetime=1000         " 设置检查间隔为 1 秒（单位毫秒）
+
+nnoremap <Leader>q :q<CR>     " 按 ,q 退出当前窗口
+nnoremap <Leader>w :w<CR>     " 按 ,e 重新加载当前文件（保留修改）
+nnoremap <Leader>e :e<CR>     " 按 ,e 重新加载当前文件（保留修改）
+
 """"""""""""""""""""""""""""third-party plugin""""""""""""""""""""""""""""""
 
 " plugged ______________
