@@ -22,6 +22,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 #make -j16
 #sudo make install
 
+
+apt-get purge vim vim-runtime vim-common vim-tiny
+apt-get autoremove
+apt --fix-broken install
+apt update
+apt install software-properties-common
+add-apt-repository ppa:jonathonf/vim
+apt update
+apt install vim-gtk3 -y
+
 # ctags + taglist + cscope prepare
 # sudo apt-get install -y exuberant-ctags
 apt install universal-ctags
@@ -35,13 +45,13 @@ apt update
 apt install ripgrep
 
 # prepare LSP env (optional)
-# pip install python-lsp-server
+pip install python-lsp-server
 apt install -y curl
-# # curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+# curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 apt install -y nodejs
-# apt install clangd-14  # 或最新版本, 已安装久不用再装了
-# update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-14 100
+apt install clangd-14  # 或最新版本, 已安装久不用再装了
+update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-14 100
 ```
 
 # 2 set .vimrc
