@@ -346,6 +346,9 @@ augroup FixLspHighlight
   " 3. 禁用自动文档高亮（可选）
   autocmd VimEnter * let g:lsp_document_highlight_enabled = 0
 augroup END
+
+autocmd WinEnter * setlocal signcolumn=no  " 进入窗口时关闭符号列
+autocmd WinLeave * setlocal signcolumn=no   " 离开窗口时隐藏符号列
 ```
 
 # 3 key words
