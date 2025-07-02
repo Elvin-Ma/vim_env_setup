@@ -29,7 +29,6 @@ apt --fix-broken install
 apt update
 apt install software-properties-common
 add-apt-repository ppa:jonathonf/vim
-apt update
 apt install vim-gtk3 -y
 
 # ctags + taglist + cscope prepare
@@ -41,7 +40,6 @@ apt install universal-ctags
 # install vim-jedi for python
 pip install jedi
 pip install pygments # python语法高亮
-apt update
 apt install ripgrep
 
 # prepare LSP env (optional)
