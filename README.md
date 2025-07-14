@@ -357,6 +357,14 @@ autocmd WinLeave * setlocal signcolumn=no   " 离开窗口时隐藏符号列
 |:--|:--|:--|:--|
 |NerdTree| \<leader>t| 切换tree显示状态 |
 |NerdTree| \<leader>nf| 打开当前文件路径 |
+|NerdTree| o | 打开当前文件list |
+|NerdTree| O | 递归打开当前文件list |
+|NerdTree| x | 关闭当前文件list |
+|NerdTree| X | 递归关闭当前文件list |
+|NerdTree| r | 刷新当前目录 |
+|NerdTree| R | 递归刷新当前目录 |
+|NerdTree| R | 递归刷新当前目录 |
+|NerdTree| m | 文件操作：a(add), d(delete) |
 |Taglist| :Tlist| 打开taglist窗口 |
 |QuickFix | v | 垂直分割窗口 |
 |QuickFix | <待补充> | 水平分割窗口 | 暂时失效 |
